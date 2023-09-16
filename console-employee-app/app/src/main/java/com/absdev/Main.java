@@ -1,7 +1,9 @@
 package com.absdev;
 
+import com.absdev.view.StartMenu;
+
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Hello world!");
+        StartMenu.getInstance().print();
     }
 }
