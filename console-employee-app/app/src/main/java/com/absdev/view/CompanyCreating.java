@@ -1,5 +1,8 @@
 package com.absdev.view;
 
+import com.absdev.model.Company;
+import com.absdev.storage.InMemoryStorage;
+
 import java.util.Scanner;
 
 public class CompanyCreating extends SubMenu {
@@ -12,13 +15,15 @@ public class CompanyCreating extends SubMenu {
         return instance;
     }
 
-    public void print(Menu prevMenu, String companyName) {
-        System.out.println("===" + companyName + "===");
-        System.out.println(" 0 for back");
+
+    public void print() {
         Scanner scanner = new Scanner(System.in);
-        int input = scanner.nextInt();
-        if (input == 0) {
-            back(prevMenu);
-        }
+
+        System.out.println("=== Добавление компании ===\n");
+        System.out.print("Введите название: ");
+
+        String input = scanner.nextLine();
+        InMemoryStorage.saveCompany(new Company(input));
+        back();
     }
 }
