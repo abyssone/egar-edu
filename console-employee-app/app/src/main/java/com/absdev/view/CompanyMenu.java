@@ -1,7 +1,10 @@
 package com.absdev.view;
 
+import com.absdev.model.Company;
+import com.absdev.model.Employee;
 import com.absdev.storage.GlobalState;
 
+import java.util.List;
 import java.util.Scanner;
 
 public class CompanyMenu extends SubMenu{
@@ -16,14 +19,35 @@ public class CompanyMenu extends SubMenu{
 
     @Override
     public void print() {
-        System.out.println("===" + GlobalState.getCurrentCompany().getTitle() + "===\n");
-        System.out.println("Добавьте первого сотрудника");
-        System.out.println("\n0. Назад");
+        Company company = GlobalState.getCurrentCompany();
+        List<Employee> employees = company.getEmployees();
 
-        Scanner scanner = new Scanner(System.in);
+        System.out.println("=====" + company.getTitle() + "=====\n");
+
+        if (employees != null && !employees.isEmpty()) {
+            for (int i = 1; i <= employees.size(); i++) {
+                Employee employee = employees.get(i - 1);
+
+                System.out.println("Имя: " + employee.getName());
+                System.out.println("Email: " + employee.getEmail());
+                System.out.println("Должность: " + employee.getPosition() + "\n");
+            }
+        } else {
+            System.out.println("Добавьте первого сотрудника\n");
+        }
+
+
+        System.out.println("99. Добавить сотрудника");
+        System.out.println("0. Назад");
+
         int input = scanner.nextInt();
-        if (input == 0) {
-            back();
+        switch (input) {
+            case 0:
+                back();
+                break;
+            case 99:
+                GlobalState.setPrevMenu(this);
+                EmployeeCreating.getInstance().print();
         }
     }
 }
