@@ -7,6 +7,7 @@ public class Company {
     private String title;
     private List<Employee> employees = new ArrayList<>();
 
+
     public String getTitle() {
         return title;
     }
@@ -16,6 +17,7 @@ public class Company {
     }
 
     public Company(String title) {
+        if (title == null) throw new IllegalArgumentException("Название компании не может быть null");
         this.title = title;
     }
 
@@ -24,6 +26,7 @@ public class Company {
     }
 
     public void addEmployee(Employee employee) {
+        if (employee == null) throw new IllegalArgumentException("Employee не может быть null");
         employees.add(employee);
     }
 }
