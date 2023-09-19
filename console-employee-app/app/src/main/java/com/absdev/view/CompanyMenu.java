@@ -2,10 +2,9 @@ package com.absdev.view;
 
 import com.absdev.model.Company;
 import com.absdev.model.Employee;
-import com.absdev.storage.GlobalState;
+import com.absdev.storage.SessionState;
 
 import java.util.List;
-import java.util.Scanner;
 
 public class CompanyMenu extends SubMenu{
     private final static CompanyMenu instance = new CompanyMenu();
@@ -19,7 +18,7 @@ public class CompanyMenu extends SubMenu{
 
     @Override
     public void print() {
-        Company company = GlobalState.getCurrentCompany();
+        Company company = SessionState.getCurrentCompany();
         List<Employee> employees = company.getEmployees();
 
         System.out.println("=====" + company.getTitle() + "=====\n");
@@ -46,7 +45,7 @@ public class CompanyMenu extends SubMenu{
                 back();
                 break;
             case 99:
-                GlobalState.setPrevMenu(this);
+                SessionState.setPrevMenu(this);
                 EmployeeCreating.getInstance().print();
         }
     }

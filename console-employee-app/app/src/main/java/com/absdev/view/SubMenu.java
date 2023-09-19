@@ -1,9 +1,9 @@
 package com.absdev.view;
 
-import com.absdev.storage.GlobalState;
+import com.absdev.storage.SessionState;
 
 public abstract class SubMenu extends Menu {
     void back() {
-        GlobalState.getPrevMenu().print();
+        SessionState.getPrevMenu().print();
     }
 }

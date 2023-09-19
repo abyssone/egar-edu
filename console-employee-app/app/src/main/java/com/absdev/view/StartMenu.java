@@ -1,11 +1,11 @@
 package com.absdev.view;
 
 import com.absdev.model.Company;
-import com.absdev.storage.GlobalState;
+import com.absdev.storage.SessionState;
 import com.absdev.storage.InMemoryStorage;
+import com.absdev.util.Validator;
 
 import java.util.List;
-import java.util.Scanner;
 
 public class StartMenu extends Menu {
 
@@ -20,10 +20,10 @@ public class StartMenu extends Menu {
 
     @Override
     public void print() {
-        GlobalState.setPrevMenu(this);
+        SessionState.setPrevMenu(this);
         List<Company> companies = InMemoryStorage.findAllCompanies();
 
-        System.out.println("===== Главное меню =====\n");
+        printHeader("Главное меню");
 
         if (!companies.isEmpty()) {
             for (int i = 1; i <= companies.size(); i++) {
@@ -33,25 +33,37 @@ public class StartMenu extends Menu {
             System.out.println("Добавьте первую копманию");
         }
 
-        System.out.println("\n0 for exit");
-        System.out.println("99 for create company");
+        System.out.println("\n0 - Создать компанию");
+        System.out.println("-1 - Выход");
 
         waitForNextInput(companies);
     }
 
     private void waitForNextInput(List<Company> companies) {
-        Scanner scanner = new Scanner(System.in);
+        String input = null;
+        int option;
 
-        int input = scanner.nextInt();
-        if (input == 0) {
-            System.out.println("Bye");
-        } else if (input == 99) {
-            GlobalState.setPrevMenu(this);
-            CompanyCreating.getInstance().print();
-        } else {
-            GlobalState.setPrevMenu(this);
-            GlobalState.setCurrentCompany(companies.get(input - 1));
-            CompanyMenu.getInstance().print();
+        while (!Validator.isNumericString(input)) {
+            input = scanner.nextLine();
+        }
+
+        option = Integer.parseInt(input);
+
+        switch (option) {
+            case (-1):
+                System.out.println("Bye");
+                break;
+            case (0):
+                SessionState.setPrevMenu(this);
+                CompanyCreating.getInstance().print();
+                break;
+            default:
+                if (option > 0 && option <= companies.size()) {
+                    SessionState.setPrevMenu(this);
+                    SessionState.setCurrentCompany(companies.get(option - 1));
+                    CompanyMenu.getInstance().print();
+                }
+                break;
         }
     }
 }
