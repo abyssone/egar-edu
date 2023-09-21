@@ -6,22 +6,22 @@ import com.absdev.view.Menu;
 import java.util.ArrayList;
 import java.util.List;
 
-public class GlobalState {
+public class SessionState {     //State manager
     private static Company currentCompany = null;
-    private static List<Menu> prevMenu = new ArrayList<>();
+    private static List<Menu> menuStack = new ArrayList<>();    //LIFO Stack последовательного вызова меню
 
     public static Company getCurrentCompany() {
         return currentCompany;
     }
 
     public static void setCurrentCompany(Company currentCompany) {
-        GlobalState.currentCompany = currentCompany;
+        SessionState.currentCompany = currentCompany;
     }
 
     public static Menu getPrevMenu() {
-        if (!prevMenu.isEmpty()) {
-            Menu last = prevMenu.get(prevMenu.size() - 1);
-            prevMenu.remove(prevMenu.size() - 1);
+        if (!menuStack.isEmpty()) {
+            Menu last = menuStack.get(menuStack.size() - 1);
+            menuStack.remove(menuStack.size() - 1);
             return last;
         } else {
             throw new NullPointerException("Стек вызовов меню пуст");
@@ -29,6 +29,6 @@ public class GlobalState {
     }
 
     public static void setPrevMenu(Menu menu) {
-        prevMenu.add(menu);
+        menuStack.add(menu);
     }
 }

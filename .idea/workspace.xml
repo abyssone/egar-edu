@@ -1,7 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="22080ce4-576a-48d0-b3c9-bbcf6cfc7f0b" name="Changes" comment="" />
+    <list default="true" id="22080ce4-576a-48d0-b3c9-bbcf6cfc7f0b" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/console-employee-app/app/src/main/java/com/absdev/util/Validator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/console-employee-app/app/src/main/java/com/absdev/storage/GlobalState.java" beforeDir="false" afterPath="$PROJECT_DIR$/console-employee-app/app/src/main/java/com/absdev/storage/SessionState.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/console-employee-app/app/src/main/java/com/absdev/view/CompanyMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/console-employee-app/app/src/main/java/com/absdev/view/CompanyMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/console-employee-app/app/src/main/java/com/absdev/view/EmployeeCreating.java" beforeDir="false" afterPath="$PROJECT_DIR$/console-employee-app/app/src/main/java/com/absdev/view/EmployeeCreating.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/console-employee-app/app/src/main/java/com/absdev/view/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/console-employee-app/app/src/main/java/com/absdev/view/Menu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/console-employee-app/app/src/main/java/com/absdev/view/StartMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/console-employee-app/app/src/main/java/com/absdev/view/StartMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/console-employee-app/app/src/main/java/com/absdev/view/SubMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/console-employee-app/app/src/main/java/com/absdev/view/SubMenu.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -18,14 +27,20 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 4
+}]]></component>
   <component name="ProjectId" id="2VTvTrwRcRWoC3dcTL69HwN4KAV" />
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "D:/GIT/egar-edu"
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "D:/GIT/egar-edu/console-employee-app/app",
+    "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -36,8 +51,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1694872895803</updated>
+      <workItem from="1695150867186" duration="24000" />
     </task>
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">

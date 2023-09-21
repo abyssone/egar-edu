@@ -1,9 +1,7 @@
 package com.absdev.view;
 
 import com.absdev.model.Employee;
-import com.absdev.storage.GlobalState;
-
-import java.util.Scanner;
+import com.absdev.storage.SessionState;
 
 public class EmployeeCreating extends SubMenu {
     private final static EmployeeCreating instance = new EmployeeCreating();
@@ -31,7 +29,7 @@ public class EmployeeCreating extends SubMenu {
         position = scanner.nextLine();
 
         Employee newEmployee = new Employee(name, email, position);
-        GlobalState.getCurrentCompany().addEmployee(newEmployee);
+        SessionState.getCurrentCompany().addEmployee(newEmployee);
         back();
     }
 }
