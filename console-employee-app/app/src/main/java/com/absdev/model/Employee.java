@@ -1,14 +1,21 @@
 package com.absdev.model;
 
+import com.absdev.model.report.Report;
+
+import java.util.ArrayList;
+import java.util.List;
+
 public class Employee {
     private String name;
     private String email;
     private String position;
+    private List<Report> reports;
 
     public Employee(String name, String email, String position) {
         this.name = name;
         this.email = email;
         this.position = position;
+        this.reports = new ArrayList<>();
     }
 
     public String getName() {
@@ -33,5 +40,22 @@ public class Employee {
 
     public void setPosition(String position) {
         this.position = position;
+    }
+
+    /**
+     * Довабление нового отчета, если отчета за указанную дату еще не добавлено.
+     * @param report Новый отчет
+     * @return true если отчет добавлен, иначе false
+     */
+    public boolean addReport(Report report) {
+        if (this.reports.stream().noneMatch(r -> r.getDate().isEqual(report.getDate()))) {
+            this.reports.add(report);
+            return true;
+        } else return false;
+    }
+
+    public List<Report> getReports() {
+        List<Report> copy = new ArrayList<>(this.reports);
+        return copy;
     }
 }
