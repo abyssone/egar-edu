@@ -5,7 +5,7 @@ import com.absdev.util.Validator;
 import java.util.Arrays;
 import java.util.Scanner;
 
-public abstract class Menu {
+public abstract class Menu{
     protected final Scanner scanner = new Scanner(System.in);
     public abstract void run();
     protected int waitNextInt() {

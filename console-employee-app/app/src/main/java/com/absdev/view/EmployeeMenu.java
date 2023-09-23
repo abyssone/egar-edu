@@ -43,12 +43,12 @@ public class EmployeeMenu extends SubMenu{
         printHeader(employee.getName());
         List<Report> reports = employee.getReports();
 
-        System.out.println("Отчеты:");
+        System.out.println("Отчеты:\n");
         for (Report report : reports) {
-            System.out.println(" Дата:\t" + report.getDate());
-            System.out.println(" Установлено часов:\t" + report.getWorkingHours());
-            System.out.println(" Фактически работал:\t" + report.getActualHoursOfWorking());
-            System.out.println(" Доп. инфо:\t" + report.getInformation());
+            System.out.println(" Дата:  " + report.getDate());
+            System.out.println(" Установлено часов:  " + report.getWorkingHours());
+            System.out.println(" Фактически работал:  " + report.getActualHoursOfWorking());
+            System.out.println(" Доп. инфо:  " + report.getInformation() + "\n");
         }
 
         System.out.println("0.\tДобавить отчет");
