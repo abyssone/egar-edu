@@ -15,15 +15,21 @@ public class CompanyCreating extends SubMenu {
         return instance;
     }
 
+    @Override
+    public void run() {
+        this.print();
+        this.addCompany();
+    }
 
-    public void print() {
-        Scanner scanner = new Scanner(System.in);
-
-        System.out.println("=== Добавление компании ===\n");
+    private void print() {
+        printHeader("Добавление компании");
         System.out.print("Введите название: ");
+    }
 
+    private void addCompany() {
         String input = scanner.nextLine();
         InMemoryStorage.saveCompany(new Company(input));
         back();
     }
+
 }

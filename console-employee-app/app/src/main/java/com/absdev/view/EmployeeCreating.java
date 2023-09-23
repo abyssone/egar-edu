@@ -14,7 +14,11 @@ public class EmployeeCreating extends SubMenu {
     }
 
     @Override
-    public void print() {
+    public void run() {
+        this.print();
+    }
+
+    private void print() {
         String name, email, position;
 
         System.out.println("===== Добавление сотрудника =====\n");
