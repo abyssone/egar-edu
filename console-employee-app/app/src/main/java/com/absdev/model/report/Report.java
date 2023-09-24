@@ -1,7 +1,13 @@
 package com.absdev.model.report;
 
+import com.absdev.exception.OutOfRangeException;
+
+import java.text.DateFormat;
+import java.time.Duration;
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
+import java.util.Calendar;
 
 /**
  * <p>Отчет о проведенном на рабочем месте времени.</p>
@@ -18,6 +24,10 @@ public class Report {
 
 
     public Report(String dateFormat, Integer workingHours, Integer actualHoursOfWorking, String information) {
+        if(workingHours < 0 || workingHours > 24 ||
+            actualHoursOfWorking < 0 || actualHoursOfWorking > 24) {
+            throw new OutOfRangeException();
+        }
 
         this.date = LocalDate.parse(dateFormat);
         this.workingHours = workingHours;
