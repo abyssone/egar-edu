@@ -5,7 +5,7 @@ import java.time.LocalDate;
 public class LeavingReport extends Report{
 
     private String absenceReason;
-    public LeavingReport(LocalDate date, Integer workingHours, String information, String absenceReason) {
+    public LeavingReport(String date, Integer workingHours, String information, String absenceReason) {
         super(date, workingHours, 0, information);
         this.absenceReason = absenceReason;
     }
