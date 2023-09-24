@@ -1,9 +1,12 @@
 package com.absdev.model;
 
 import com.absdev.model.report.Report;
+import com.absdev.util.Validator;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import static com.absdev.util.Validator.*;
 
 public class Employee {
     private String name;
@@ -12,6 +15,11 @@ public class Employee {
     private List<Report> reports;
 
     public Employee(String name, String email, String position) {
+        if(isNullOrEmptyString(name)
+            || isNullOrEmptyString(email)
+            || isNullOrEmptyString(position)) {
+            throw new IllegalArgumentException("Параметры не могут быть пустыми");
+        }
         this.name = name;
         this.email = email;
         this.position = position;
@@ -48,6 +56,7 @@ public class Employee {
      * @return true если отчет добавлен, иначе false
      */
     public boolean addReport(Report report) {
+        if(report == null) throw new IllegalArgumentException("Report не может быть null");
         if (this.reports.stream().noneMatch(r -> r.getDate().isEqual(report.getDate()))) {
             this.reports.add(report);
             return true;

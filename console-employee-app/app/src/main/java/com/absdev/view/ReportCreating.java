@@ -59,7 +59,7 @@ public class ReportCreating extends SubMenu{
         information = scanner.nextLine();
 
         employee.addReport(option == 1
-                            ? new Report(LocalDate.parse(date), workingHours, actualHoursOfWorking, information)
-                            : new LeavingReport(LocalDate.parse(date), workingHours, information, absenceReason));
+                            ? new Report(date, workingHours, actualHoursOfWorking, information)
+                            : new LeavingReport(date, workingHours, information, absenceReason));
     }
 }

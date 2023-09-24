@@ -1,6 +1,7 @@
 package com.absdev.model.report;
 
 import java.time.LocalDate;
+import java.time.format.DateTimeParseException;
 
 /**
  * <p>Отчет о проведенном на рабочем месте времени.</p>
@@ -16,8 +17,9 @@ public class Report {
     protected String information;
 
 
-    public Report(LocalDate date, Integer workingHours, Integer actualHoursOfWorking, String information) {
-        this.date = date;
+    public Report(String dateFormat, Integer workingHours, Integer actualHoursOfWorking, String information) {
+
+        this.date = LocalDate.parse(dateFormat);
         this.workingHours = workingHours;
         this.actualHoursOfWorking = actualHoursOfWorking;
         this.information = information;

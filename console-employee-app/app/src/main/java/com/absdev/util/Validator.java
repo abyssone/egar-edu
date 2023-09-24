@@ -9,4 +9,9 @@ public class Validator {
             return false;
         }
     }
+
+    public static boolean isNullOrEmptyString(String string) {
+        if (string == null || string.trim().isEmpty()) return true;
+        return false;
+    }
 }
