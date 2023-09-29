@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-@DisplayName("ТЕстирование моего класса")
+@DisplayName("Тестирование моего класса")
 class MyExceptionTest {
 
     @DisplayName("Мой тест")
